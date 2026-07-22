@@ -114,86 +114,92 @@ const skills = [
 
   {
     id: 10,
-    name: "Node.js",
-    icon: <FaNodeJs />,
-    category: "Backend",
-  },
-
-  {
-    id: 11,
     name: "MySQL",
     icon: <SiMysql />,
     category: "Database",
   },
 
   {
-    id: 12,
+    id: 11,
     name: "MariaDB",
     icon: <SiMariadb />,
     category: "Database",
   },
 
   {
-    id: 13,
+    id: 12,
     name: "Git",
     icon: <FaGitAlt />,
     category: "Tools",
   },
 
   {
-    id: 14,
+    id: 13,
     name: "GitHub",
     icon: <FaGithub />,
     category: "Tools",
   },
 
   {
-    id: 15,
+    id: 14,
     name: "Figma",
     icon: <FaFigma />,
     category: "Tools",
   },
 
   {
-    id: 16,
+    id: 15,
     name: "Raspberry Pi",
     icon: <SiRaspberrypi />,
     category: "Tools",
   },
 
   {
+    id: 16,
+    name: "Node.js",
+    icon: <FaNodeJs />,
+    category: "Backend",
+    learning: true,
+  },
+
+  {
     id: 17,
     name: "TypeScript",
     icon: <SiTypescript />,
-    category: "Learning",
+    category: "Frontend",
+    learning: true,
   },
 
   {
     id: 18,
     name: "Next.js",
     icon: <SiNextdotjs />,
-    category: "Learning",
+    category: "Frontend",
+    learning: true,
   },
 
   {
     id: 19,
     name: "MongoDB",
     icon: <SiMongodb />,
-    category: "Learning",
+    category: "Database",
+    learning: true,
   },
 
   {
     id: 20,
     name: "PostgreSQL",
     icon: <SiPostgresql />,
-    category: "Learning",
+    category: "Database",
+    learning: true,
   },
 
   {
     id: 21,
     name: "Java",
     icon: <SiOpenjdk />,
-    category: "Learning",
+    category: "Languages",
+    learning: true,
   },
 ];
 function TechnicalSkills() {
@@ -202,7 +208,9 @@ function TechnicalSkills() {
   const filteredSkills =
     activeCategory === "All"
       ? skills
-      : skills.filter((skill) => skill.category === activeCategory);
+      : activeCategory === "Learning"
+        ? skills.filter((skill) => skill.learning)
+        : skills.filter((skill) => skill.category === activeCategory);
 
   return (
     <section id="technical-skills" className="technical-skills">
@@ -233,9 +241,10 @@ function TechnicalSkills() {
           <h2 className="skills-title">My Technology Stack</h2>
 
           <p className="skills-description">
-            These are the technologies I currently use for developing modern web
-            applications. I continue learning new tools and frameworks to
-            strengthen my full stack development skills.
+            These are the technologies I use to build modern, responsive, and
+            scalable web applications. I'm continuously expanding my skill set
+            by learning new tools and frameworks to grow as a Full Stack
+            Developer.
           </p>
         </motion.div>
 
@@ -245,9 +254,9 @@ function TechnicalSkills() {
           {categories.map((category) => (
             <button
               key={category}
-              className={
-                activeCategory === category ? "tab-button active" : "tab-button"
-              }
+              className={`tab-button ${
+                activeCategory === category ? "active" : ""
+              } ${category === "Learning" ? "learning-tab" : ""}`}
               onClick={() => setActiveCategory(category)}
             >
               {category}
@@ -262,7 +271,9 @@ function TechnicalSkills() {
             {filteredSkills.map((skill) => (
               <motion.div
                 key={skill.id}
-                className="skill-card"
+                className={`skill-card ${
+                  skill.learning ? "learning-card" : ""
+                }`}
                 initial={{
                   opacity: 0,
                 }}

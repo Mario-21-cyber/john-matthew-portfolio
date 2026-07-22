@@ -115,6 +115,25 @@
 
   transition: 0.35s ease;
 }
+/* ==========================================================
+   LEARNING TAB
+========================================================== */
+
+.learning-tab {
+  background: rgba(245, 158, 11, 0.12);
+
+  border: 1px solid rgba(245, 158, 11, 0.45);
+
+  color: #ffffff;
+}
+
+.learning-tab:hover {
+  background: rgba(245, 158, 11, 0.2);
+
+  border-color: #f59e0b;
+
+  color: #fcd34d;
+}
 
 .tab-button:hover {
   color: #ffffff;
@@ -124,6 +143,8 @@
   transform: translateY(-2px);
 }
 
+/* Normal active tabs */
+
 .tab-button.active {
   background: #8b5cf6;
 
@@ -132,6 +153,18 @@
   border-color: #8b5cf6;
 
   box-shadow: 0 12px 28px rgba(139, 92, 246, 0.25);
+}
+
+/* Learning active tab */
+
+.learning-tab.active {
+  background: #f59e0b;
+
+  color: #ffffff;
+
+  border-color: #f59e0b;
+
+  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.3);
 }
 /* ==========================================================
    TECH STACK CONTAINER
@@ -220,6 +253,21 @@
   border-color: #8b5cf6;
 
   box-shadow: 0 14px 28px rgba(139, 92, 246, 0.2);
+}
+/* ==========================================================
+   LEARNING CARDS
+========================================================== */
+
+.learning-card {
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.1), #191c24);
+
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.learning-card:hover {
+  border-color: #f59e0b;
+
+  box-shadow: 0 14px 28px rgba(245, 158, 11, 0.18);
 }
 
 /* ==========================================================
