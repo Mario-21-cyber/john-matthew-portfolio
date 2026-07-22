@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 import portfolio from "../../assets/images/portfolio.png";
+import capstone from "../../assets/images/capstone.png";
 
 const projects = [
   {
@@ -37,9 +38,17 @@ const projects = [
     description:
       "A campus entrance monitoring system using QR Code authentication and SMS notifications for real-time attendance monitoring and campus security.",
 
-    image: portfolio,
+    image: capstone,
 
-    tech: ["PHP", "MySQL", "JavaScript", "QR Code", "SIM800L"],
+    tech: [
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "Raspberry Pi",
+      "QR Code",
+      "SIM800L",
+      "Scanner ",
+    ],
 
     github: "#",
 
@@ -58,7 +67,7 @@ const projects = [
 
     image: portfolio,
 
-    tech: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
+    tech: ["HTML", "CSS", "PHP", "MySQL", "JavaScript"],
 
     github: "#",
 
