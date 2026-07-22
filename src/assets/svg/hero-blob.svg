@@ -1,0 +1,27 @@
+<svg width="620" height="700" viewBox="0 0 620 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+
+<linearGradient id="blobGradient" x1="0" y1="0" x2="620" y2="700">
+
+<stop offset="0%" stop-color="#8B5CF6"/>
+
+<stop offset="100%" stop-color="#5B7CFF"/>
+
+</linearGradient>
+
+</defs>
+
+<path
+fill="url(#blobGradient)"
+fill-opacity="0.16"
+d="
+M314 30
+C437 38 566 128 585 258
+C603 389 520 515 405 590
+C285 650 150 655 70 590
+C5 535 10 320 82 176
+C160 40 191 22 314 30
+Z"/>
+
+</svg>
