@@ -3,265 +3,169 @@ import "./Footer.css";
 import { motion } from "framer-motion";
 
 import {
-
-    FaLinkedinIn,
-    FaGithub,
-    FaEnvelope,
-    FaFacebookF,
-    FaPhoneAlt
-
+  FaLinkedinIn,
+  FaGithub,
+  FaEnvelope,
+  FaFacebookF,
+  FaPhoneAlt,
 } from "react-icons/fa";
 
 const navigationLinks = [
+  {
+    title: "Home",
+    href: "#home",
+  },
 
-    {
-        title:"Home",
-        href:"#home"
-    },
+  {
+    title: "Experience",
+    href: "experience",
+  },
 
-    {
-        title:"Experience",
-        href:"#experience"
-    },
+  {
+    title: "Projects",
+    href: "projects",
+  },
 
-    {
-        title:"Projects",
-        href:"#recent-projects"
-    },
-
-    {
-        title:"About",
-        href:"#about"
-    }
-
+  {
+    title: "About",
+    href: "about",
+  },
 ];
 
 const socialLinks = [
+  {
+    icon: <FaLinkedinIn />,
 
-    {
+    href: "https://www.linkedin.com/in/john-matthew-royo-0a576341b/",
 
-        icon: <FaLinkedinIn />,
+    label: "LinkedIn",
+  },
 
-        href: "https://linkedin.com",
+  {
+    icon: <FaGithub />,
 
-        label: "LinkedIn"
+    href: "https://github.com/Mario-21-cyber",
 
-    },
+    label: "GitHub",
+  },
 
-    {
+  {
+    icon: <FaEnvelope />,
 
-        icon: <FaGithub />,
+    href: "mailto:johnmatthewroyo21@gmail.com",
 
-        href: "https://github.com",
+    label: "Email",
+  },
 
-        label: "GitHub"
+  {
+    icon: <FaFacebookF />,
 
-    },
+    href: "https://www.facebook.com/johnmatthew.royo21",
 
-    {
+    label: "Facebook",
+  },
 
-        icon: <FaEnvelope />,
+  {
+    icon: <FaPhoneAlt />,
 
-        href: "mailto:your@email.com",
+    href: "tel:+639764308211",
 
-        label: "Email"
-
-    },
-
-    {
-
-        icon: <FaFacebookF />,
-
-        href: "https://facebook.com",
-
-        label: "Facebook"
-
-    },
-
-    {
-
-        icon: <FaPhoneAlt />,
-
-        href: "tel:+639000000000",
-
-        label: "Phone"
-
-    }
-
+    label: "Phone",
+  },
 ];
 
 function Footer() {
-
-    return (
-
-        <footer
-
-            id="footer"
-
-            className="footer"
-
-        >
-
-            <div className="footer-container">
-                              {/* ==========================
+  return (
+    <footer id="footer" className="footer">
+      <div className="footer-container">
+        {/* ==========================
                     LEFT COLUMN
                 ========================== */}
 
-                <motion.div
+        <motion.div
+          className="footer-content"
+          initial={{
+            opacity: 0,
 
-                    className="footer-content"
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
 
-                    initial={{
+            y: 0,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          viewport={{
+            once: true,
+          }}
+        >
+          {/* LEFT */}
 
-                        opacity:0,
+          <div className="footer-about">
+            <h4 className="footer-name">John Matthew Malabanan</h4>
 
-                        y:40
-
-                    }}
-
-                    whileInView={{
-
-                        opacity:1,
-
-                        y:0
-
-                    }}
-
-                    transition={{
-
-                        duration:.7
-
-                    }}
-
-                    viewport={{
-
-                        once:true
-
-                    }}
-
-                >
-
-                    {/* LEFT */}
-
-                    <div className="footer-about">
-
-                        <h4 className="footer-name">
-
-                            John Matthew Malabanan
-
-                        </h4>
-
-                        
-                        <p className="footer-description">
-
-                            Passionate about building modern web applications,
-                            solving real-world problems, and continuously
-                            improving my skills in full stack web development.
-
-                        </p>
-
-                    </div>
-                                        {/* ==========================
+            <p className="footer-description">
+              I build modern web applications with a focus on clean design,
+              performance, and user experience while continuously expanding my
+              skills as a Full Stack Developer.
+            </p>
+          </div>
+          {/* ==========================
                         NAVIGATION
                     ========================== */}
 
-                    <div className="footer-links">
+          <div className="footer-links">
+            <h3 className="footer-heading">Quick Links</h3>
 
-                        <h3 className="footer-heading">
+            <ul>
+              {navigationLinks.map((link) => (
+                <li key={link.title}>
+                  <a href={link.href}>{link.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-                            Quick Links
-
-                        </h3>
-
-                        <ul>
-
-                            {navigationLinks.map((link)=>(
-
-                                <li key={link.title}>
-
-                                    <a href={link.href}>
-
-                                        {link.title}
-
-                                    </a>
-
-                                </li>
-
-                            ))}
-
-                        </ul>
-
-                    </div>
-
-                    {/* ==========================
+          {/* ==========================
                         SOCIAL LINKS
                     ========================== */}
 
-                    <div className="footer-social">
+          <div className="footer-social">
+            <h3 className="footer-heading">Connect with Me</h3>
 
-                        <h3 className="footer-heading">
+            <div className="social-icons">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={social.label}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+        </motion.div>
 
-                            Connect with Me
-
-                        </h3>
-
-                        <div className="social-icons">
-
-                            {socialLinks.map((social)=>(
-
-                                <a
-
-                                    key={social.label}
-
-                                    href={social.href}
-
-                                    target="_blank"
-
-                                    rel="noreferrer"
-
-                                    aria-label={social.label}
-
-                                >
-
-                                    {social.icon}
-
-                                </a>
-
-                            ))}
-
-                        </div>
-
-                    </div>
-
-                </motion.div>
-
-                {/* ==========================
+        {/* ==========================
                     FOOTER BOTTOM
                 ========================== */}
 
-                <div className="footer-bottom">
+        <div className="footer-bottom">
+          <p>
+            © {new Date().getFullYear()} John Matthew Malabanan. All rights
+            reserved.
+          </p>
 
-                    <p>
-
-                        © {new Date().getFullYear()} John Matthew
-                        Malabanan. All rights reserved.
-
-                    </p>
-
-                    <p>
-
-                        Built with React, Vite & Framer Motion.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </footer>
-
-    );
-
+          <p>Built with React, Vite & Framer Motion.</p>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;
