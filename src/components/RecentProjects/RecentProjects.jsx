@@ -7,6 +7,7 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 import portfolio from "../../assets/images/portfolio.png";
 import capstone from "../../assets/images/capstone.png";
+import dacs from "../../assets/images/dacs.png";
 
 const projects = [
   {
@@ -65,7 +66,7 @@ const projects = [
     description:
       "A document tracking and routing system developed during my internship at Makati City OM-ICTO for managing government documents.",
 
-    image: portfolio,
+    image: dacs,
 
     tech: ["HTML", "CSS", "PHP", "MySQL", "JavaScript"],
 
