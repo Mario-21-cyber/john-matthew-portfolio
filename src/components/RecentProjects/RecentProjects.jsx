@@ -71,7 +71,7 @@ const projects = [
 
     tech: ["HTML", "CSS", "PHP", "MySQL", "JavaScript"],
 
-    github: "#",
+    github: "https://github.com/Mario-21-cyber/om-icto-dacs",
 
     demo: "#",
   },
