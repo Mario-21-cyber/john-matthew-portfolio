@@ -13,7 +13,7 @@ const projects = [
 
     title: "Personal Portfolio",
 
-    subtitle: "Featured Project",
+    subtitle: "Personal Project",
 
     image: portfolio,
 
@@ -32,7 +32,8 @@ const projects = [
 
     technologies: ["React", "Vite", "JavaScript", "CSS", "Framer Motion"],
 
-    github: "#",
+    github:
+      "https://github.com/Mario-21-cyber/john-matthew-portfolio/tree/main",
 
     live: "#",
   },
@@ -104,7 +105,7 @@ const projects = [
 
     technologies: ["PHP", "MySQL", "JavaScript", "HTML", "CSS"],
 
-    github: "#",
+    github: "https://github.com/Mario-21-cyber/om-icto-dacs",
 
     live: "#",
   },
