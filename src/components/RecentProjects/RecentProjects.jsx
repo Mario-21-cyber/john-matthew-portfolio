@@ -24,7 +24,8 @@ const projects = [
 
     tech: ["React", "Vite", "CSS", "Framer Motion", "GitHub"],
 
-    github: "#",
+    github:
+      "https://github.com/Mario-21-cyber/john-matthew-portfolio/tree/main",
 
     demo: "#",
   },
