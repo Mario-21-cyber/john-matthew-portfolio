@@ -1,497 +1,306 @@
 import "./Projects.css";
 import { motion } from "framer-motion";
 import Footer from "../Footer/Footer";
+import portfolio from "../../assets/images/portfolio.png";
+import capstone from "../../assets/images/capstone.png";
+import dacs from "../../assets/images/dacs.png";
 
-
-import {
-
-    FaGithub,
-    FaExternalLinkAlt,
-    FaCheckCircle
-
-} from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaCheckCircle } from "react-icons/fa";
 
 const projects = [
+  {
+    id: 1,
 
-    {
+    title: "Personal Portfolio",
 
-        id:1,
+    subtitle: "Featured Project",
 
-        title:"Personal Portfolio",
+    image: portfolio,
 
-        subtitle:"Featured Project",
+    description:
+      "A modern developer portfolio built using React and Vite showcasing my experience, projects, certifications, and technical skills through a premium user interface and smooth animations.",
 
-        image:"/projects/portfolio.png",
+    features: [
+      "Responsive User Interface",
 
-        description:
-        "A modern developer portfolio built using React and Vite showcasing my experience, projects, certifications, and technical skills through a premium user interface and smooth animations.",
+      "Modern UI / UX Design",
 
-        features:[
+      "Smooth Page Animations",
 
-            "Responsive User Interface",
+      "Reusable React Components",
+    ],
 
-            "Modern UI / UX Design",
+    technologies: ["React", "Vite", "JavaScript", "CSS", "Framer Motion"],
 
-            "Smooth Page Animations",
+    github: "#",
 
-            "Reusable React Components"
+    live: "#",
+  },
 
-        ],
+  {
+    id: 2,
 
-        technologies:[
+    title: "QR Code-Based Gate Entrance Monitoring System",
 
-            "React",
+    subtitle: "Capstone Project",
 
-            "Vite",
+    image: capstone,
 
-            "JavaScript",
+    description:
+      "A QR Code-based student entrance monitoring system integrated with Raspberry Pi and GSM SMS notification for parents.",
 
-            "CSS",
+    features: [
+      "QR Code Authentication",
 
-            "Framer Motion"
+      "Parent SMS Notification",
 
-        ],
+      "Attendance Monitoring",
 
-        github:"#",
+      "Raspberry Pi Integration",
+    ],
 
-        live:"#"
+    technologies: [
+      "PHP",
 
-    },
+      "MySQL",
 
-    {
+      "JavaScript",
 
-        id:2,
+      "HTML",
 
-        title:"QR Code-Based Gate Entrance Monitoring System",
+      "CSS",
 
-        subtitle:"Capstone Project",
+      "Raspberry Pi",
 
-        image:"/projects/portfolio.png",
+      "SIM800L",
+    ],
 
-        description:
-        "A QR Code-based student entrance monitoring system integrated with Raspberry Pi and GSM SMS notification for parents.",
+    github: "#",
 
-        features:[
+    live: "#",
+  },
 
-            "QR Code Authentication",
+  {
+    id: 3,
 
-            "Parent SMS Notification",
+    title: "Document Administration and Control System",
 
-            "Attendance Monitoring",
+    subtitle: "Internship Project",
 
-            "Raspberry Pi Integration"
+    image: dacs,
 
-        ],
+    description:
+      "A production-ready document tracking and routing system developed during my internship at the City Government of Makati.",
 
-        technologies:[
+    features: [
+      "Incoming Documents",
 
-            "PHP",
+      "Internal Routing",
 
-            "MySQL",
+      "Outgoing Documents",
 
-            "JavaScript",
+      "Dashboard Analytics",
+    ],
 
-            "HTML",
+    technologies: ["PHP", "MySQL", "JavaScript", "HTML", "CSS"],
 
-            "CSS",
+    github: "#",
 
-            "Raspberry Pi",
-
-            "SIM800L"
-
-        ],
-
-        github:"#",
-
-        live:"#"
-
-    },
-
-    {
-
-        id:3,
-
-        title:"Document Administration and Control System",
-
-        subtitle:"Internship Project",
-
-        image:"/projects/portfolio.png",
-
-        description:
-        "A production-ready document tracking and routing system developed during my internship at the City Government of Makati.",
-
-        features:[
-
-            "Incoming Documents",
-
-            "Internal Routing",
-
-            "Outgoing Documents",
-
-            "Dashboard Analytics"
-
-        ],
-
-        technologies:[
-
-            "PHP",
-
-            "MySQL",
-
-            "JavaScript",
-
-            "HTML",
-
-            "CSS"
-
-        ],
-
-        github:"#",
-
-        live:"#"
-
-    }
-
+    live: "#",
+  },
 ];
 
-function Project(){
-
-    return(
-
+function Project() {
+  return (
     <>
-
-        <section
-
-            id="projects"
-
-            className="projects"
-
-        >
-
-            <div className="projects-container">
-                              {/* ===========================================
+      <section id="projects" className="projects">
+        <div className="projects-container">
+          {/* ===========================================
                     HEADER
                 =========================================== */}
 
-                <motion.div
+          <motion.div
+            className="projects-header"
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
+          >
+            <div className="projects-subtitle">MY WORK</div>
 
-                    className="projects-header"
+            <h1 className="projects-title">Featured Projects</h1>
 
-                    initial={{
-                        opacity:0,
-                        y:40
-                    }}
+            <p className="projects-description">
+              A collection of academic, internship, and personal projects that
+              showcase my skills in designing, developing, and deploying modern
+              web applications.
+            </p>
+          </motion.div>
 
-                    whileInView={{
-                        opacity:1,
-                        y:0
-                    }}
-
-                    viewport={{
-                        once:true
-                    }}
-
-                    transition={{
-                        duration:.8
-                    }}
-
-                >
-
-                    <div className="projects-subtitle">
-
-                        MY WORK
-
-                    </div>
-
-                    <h1 className="projects-title">
-
-                        Featured Projects
-
-                    </h1>
-
-                    <p className="projects-description">
-
-                        A collection of academic, internship, and personal
-                        projects that showcase my skills in designing,
-                        developing, and deploying modern web applications.
-
-                    </p>
-
-                </motion.div>
-
-                {/* ===========================================
+          {/* ===========================================
                     PROJECT LIST
                 =========================================== */}
 
-                <div className="projects-list">
-
-                    {
-
-                        projects.map((project,index)=>(
-
-                            <motion.section
-
-                                key={project.id}
-
-                                className="project-section"
-
-                                initial={{
-                                    opacity:0,
-                                    y:60
-                                }}
-
-                                whileInView={{
-                                    opacity:1,
-                                    y:0
-                                }}
-
-                                viewport={{
-                                    once:true,
-                                    amount:.25
-                                }}
-
-                                transition={{
-                                    duration:.8,
-                                    delay:index*.15
-                                }}
-
-                            >
-
-                                <div
-
-                                    className={`project-wrapper ${
-                                        index % 2 !== 0
-                                            ? "reverse"
-                                            : ""
-                                    }`}
-
-                                >
-                                                                     {/* ===========================================
+          <div className="projects-list">
+            {projects.map((project, index) => (
+              <motion.section
+                key={project.id}
+                className="project-section"
+                initial={{
+                  opacity: 0,
+                  y: 60,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.25,
+                }}
+                transition={{
+                  duration: 0.8,
+                  delay: index * 0.15,
+                }}
+              >
+                <div
+                  className={`project-wrapper ${
+                    index % 2 !== 0 ? "reverse" : ""
+                  }`}
+                >
+                  {/* ===========================================
                                         LEFT SIDE
                                     =========================================== */}
 
-                                    <motion.div
+                  <motion.div
+                    className="project-image-wrapper"
+                    initial={{
+                      opacity: 0,
+                      x: -50,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      x: 0,
+                    }}
+                    viewport={{
+                      once: true,
+                    }}
+                    transition={{
+                      duration: 0.8,
+                    }}
+                  >
+                    <div className="project-image-glow"></div>
 
-                                        className="project-image-wrapper"
+                    <div className="project-image-card">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="project-image"
+                      />
+                    </div>
+                  </motion.div>
 
-                                        initial={{
-                                            opacity:0,
-                                            x:-50
-                                        }}
-
-                                        whileInView={{
-                                            opacity:1,
-                                            x:0
-                                        }}
-
-                                        viewport={{
-                                            once:true
-                                        }}
-
-                                        transition={{
-                                            duration:.8
-                                        }}
-
-                                    >
-
-                                        <div className="project-image-glow"></div>
-
-                                        <div className="project-image-card">
-
-                                            <img
-
-                                                src={project.image}
-
-                                                alt={project.title}
-
-                                                className="project-image"
-
-                                            />
-
-                                        </div>
-
-                                    </motion.div>
-
-                                    {/* ===========================================
+                  {/* ===========================================
                                         RIGHT SIDE
                                     =========================================== */}
 
-                                    <motion.div
+                  <motion.div
+                    className="project-content"
+                    initial={{
+                      opacity: 0,
+                      x: 50,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      x: 0,
+                    }}
+                    viewport={{
+                      once: true,
+                    }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.15,
+                    }}
+                  >
+                    <div className="project-badge">{project.subtitle}</div>
 
-                                        className="project-content"
+                    <h2 className="project-title">{project.title}</h2>
 
-                                        initial={{
-                                            opacity:0,
-                                            x:50
-                                        }}
+                    <p className="project-description">{project.description}</p>
 
-                                        whileInView={{
-                                            opacity:1,
-                                            x:0
-                                        }}
-
-                                        viewport={{
-                                            once:true
-                                        }}
-
-                                        transition={{
-                                            duration:.8,
-                                            delay:.15
-                                        }}
-
-                                    >
-
-                                        <div className="project-badge">
-
-                                            {project.subtitle}
-
-                                        </div>
-
-                                        <h2 className="project-title">
-
-                                            {project.title}
-
-                                        </h2>
-
-                                        <p className="project-description">
-
-                                            {project.description}
-
-                                        </p>
-
-                                        {/* ===========================================
+                    {/* ===========================================
                                             FEATURES
                                         =========================================== */}
 
-                                        <div className="project-features">
-                                                                                    {
+                    <div className="project-features">
+                      {project.features.map((feature, index) => (
+                        <div key={index} className="project-feature">
+                          <FaCheckCircle />
 
-                                                project.features.map((feature,index)=>(
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
 
-                                                    <div
-
-                                                        key={index}
-
-                                                        className="project-feature"
-
-                                                    >
-
-                                                        <FaCheckCircle />
-
-                                                        <span>
-
-                                                            {feature}
-
-                                                        </span>
-
-                                                    </div>
-
-                                                ))
-
-                                            }
-
-                                        </div>
-
-                                        {/* ===========================================
+                    {/* ===========================================
                                             TECHNOLOGIES
                                         =========================================== */}
 
-                                        <div className="project-technologies">
+                    <div className="project-technologies">
+                      {project.technologies.map((tech, index) => (
+                        <span key={index} className="project-tech">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
 
-                                            {
-
-                                                project.technologies.map((tech,index)=>(
-
-                                                    <span
-
-                                                        key={index}
-
-                                                        className="project-tech"
-
-                                                    >
-
-                                                        {tech}
-
-                                                    </span>
-
-                                                ))
-
-                                            }
-
-                                        </div>
-
-                                        {/* ===========================================
+                    {/* ===========================================
                                             BUTTONS
                                         =========================================== */}
 
-                                        <div className="project-buttons">
+                    <div className="project-buttons">
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="project-btn primary"
+                      >
+                        <FaExternalLinkAlt />
 
-                                            <a
+                        <span>Live Demo</span>
+                      </a>
 
-                                                href={project.live}
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="project-btn secondary"
+                      >
+                        <FaGithub />
 
-                                                target="_blank"
-
-                                                rel="noreferrer"
-
-                                                className="project-btn primary"
-
-                                            >
-
-                                                <FaExternalLinkAlt />
-
-                                                <span>
-
-                                                    Live Demo
-
-                                                </span>
-
-                                            </a>
-
-                                            <a
-
-                                                href={project.github}
-
-                                                target="_blank"
-
-                                                rel="noreferrer"
-
-                                                className="project-btn secondary"
-
-                                            >
-
-                                                <FaGithub />
-
-                                                <span>
-
-                                                    Source Code
-
-                                                </span>
-
-                                            </a>
-
-                                        </div>
-
-                                    </motion.div>
-
-                                </div>
-
-                            </motion.section>
-
-                        ))
-
-                    }
-
+                        <span>Source Code</span>
+                      </a>
+                    </div>
+                  </motion.div>
                 </div>
-                            </div>
-
-        </section>
-        <Footer />
-
+              </motion.section>
+            ))}
+          </div>
+        </div>
+      </section>
+      <Footer />
     </>
-
-    );
-
+  );
 }
 
 export default Project;
