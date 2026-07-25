@@ -11,7 +11,7 @@
 
   padding: 120px 0;
 
-  background: #050505;
+  background: var(--bg-primary);
 
   overflow: hidden;
 }
@@ -59,11 +59,11 @@
 
   border-radius: 999px;
 
-  border: 1px solid rgba(140, 82, 255, 0.35);
+  border: 1px solid var(--primary-border);
 
-  background: rgba(140, 82, 255, 0.08);
+  background: var(--primary-bg);
 
-  color: #b892ff;
+  color: var(--primary-light);
 
   font-size: 0.82rem;
 
@@ -75,7 +75,7 @@
 }
 
 .hero-title {
-  color: #ffffff;
+  color: var(--text-primary);
 
   font-size: clamp(2.4rem, 4.5vw, 3.6rem);
 
@@ -87,7 +87,7 @@
 }
 
 .hero-description {
-  color: #a8a8b5;
+  color: var(--text-secondary);
 
   font-size: 1.05rem;
 
@@ -97,7 +97,7 @@
 }
 
 .hero-description strong {
-  color: #ffffff;
+  color: var(--text-primary);
 
   font-weight: 700;
 }
@@ -119,9 +119,9 @@
 
   border-radius: 28px;
 
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-card);
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
 
   backdrop-filter: blur(18px);
 
@@ -135,11 +135,7 @@
 
   inset: 0;
 
-  background: linear-gradient(
-    135deg,
-    rgba(140, 82, 255, 0.18),
-    transparent 65%
-  );
+  background: linear-gradient(135deg, var(--primary-bg), transparent 65%);
 
   pointer-events: none;
 }
@@ -161,7 +157,7 @@
 .profile-label {
   display: block;
 
-  color: #8c52ff;
+  color: var(--primary);
 
   font-size: 0.78rem;
 
@@ -175,7 +171,7 @@
 }
 
 .profile-value {
-  color: #ffffff;
+  color: var(--text-primary);
 
   font-size: 1.1rem;
 
@@ -183,18 +179,13 @@
 
   line-height: 1.5;
 }
-.profile-value {
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.5;
-}
+
 /* ===========================================
    SECTION HEADER
 =========================================== */
 
 .section-title {
-  color: #ffffff;
+  color: var(--text-primary);
 
   text-align: center;
 
@@ -212,7 +203,7 @@
 
   text-align: center;
 
-  color: #9f9faa;
+  color: var(--text-secondary);
 
   line-height: 1.9;
 
@@ -242,9 +233,9 @@
 
   border-radius: 24px;
 
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-card);
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
 
   backdrop-filter: blur(18px);
 
@@ -266,7 +257,7 @@
 
   height: 4px;
 
-  background: linear-gradient(90deg, #8c52ff, #c084fc);
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
 
   transform: scaleX(0);
 
@@ -278,9 +269,9 @@
 .value-card:hover {
   transform: translateY(-10px);
 
-  border-color: rgba(140, 82, 255, 0.45);
+  border-color: var(--primary-border);
 
-  box-shadow: 0 18px 45px rgba(140, 82, 255, 0.18);
+  box-shadow: 0 18px 45px var(--primary-bg);
 }
 
 .value-card:hover::before {
@@ -298,13 +289,13 @@
 
   margin-bottom: 20px;
 
-  color: rgba(140, 82, 255, 0.18);
+  color: var(--primary-bg);
 
   user-select: none;
 }
 
 .value-title {
-  color: #ffffff;
+  color: var(--text-primary);
 
   font-size: 1.3rem;
 
@@ -314,7 +305,7 @@
 }
 
 .value-description {
-  color: #b4b4bf;
+  color: var(--text-secondary);
 
   font-size: 0.95rem;
 
@@ -353,9 +344,9 @@
 
   border-radius: 24px;
 
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-card);
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
 
   backdrop-filter: blur(18px);
 
@@ -381,13 +372,9 @@
 
   border-radius: 18px;
 
-  background: linear-gradient(
-    135deg,
-    rgba(140, 82, 255, 0.25),
-    rgba(140, 82, 255, 0.08)
-  );
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-bg));
 
-  border: 1px solid rgba(140, 82, 255, 0.3);
+  border: 1px solid var(--primary-border);
 
   color: #ffffff;
 
@@ -407,7 +394,7 @@
 }
 
 .education-level {
-  color: #ffffff;
+  color: var(--text-primary);
 
   font-size: 1.45rem;
 
@@ -419,7 +406,7 @@
 }
 
 .education-school {
-  color: #b892ff;
+  color: var(--primary);
 
   font-size: 1.08rem;
 
@@ -429,7 +416,7 @@
 }
 
 .education-location {
-  color: #a8a8b5;
+  color: var(--text-secondary);
 
   font-size: 0.98rem;
 
@@ -468,11 +455,7 @@
 
   height: 100%;
 
-  background: linear-gradient(
-    to bottom,
-    rgba(140, 82, 255, 0.9),
-    rgba(140, 82, 255, 0.15)
-  );
+  background: linear-gradient(to bottom, var(--primary), transparent);
 
   border-radius: 999px;
 }
@@ -502,9 +485,9 @@
 
   border-radius: 24px;
 
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-card);
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
 
   backdrop-filter: blur(18px);
 
@@ -514,9 +497,9 @@
 .journey-card:hover {
   transform: translateY(-8px);
 
-  border-color: rgba(140, 82, 255, 0.45);
+  border-color: var(--primary-border);
 
-  box-shadow: 0 20px 45px rgba(140, 82, 255, 0.18);
+  box-shadow: 0 20px 45px var(--primary-bg);
 }
 
 .journey-marker {
@@ -534,7 +517,7 @@
 
   border-radius: 50%;
 
-  background: #8c52ff;
+  background: var(--primary);
 
   border: 6px solid #0b0b12;
 
@@ -560,7 +543,7 @@
 .journey-step {
   display: inline-block;
 
-  color: #8c52ff;
+  color: var(--primary);
 
   font-size: 0.82rem;
 
@@ -574,7 +557,7 @@
 }
 
 .journey-title {
-  color: #ffffff;
+  color: var(--text-primary);
 
   font-size: 1.45rem;
 
@@ -584,7 +567,7 @@
 }
 
 .journey-description {
-  color: #a8a8b5;
+  color: var(--text-secondary);
 
   font-size: 1rem;
 
@@ -615,7 +598,7 @@
     rgba(255, 255, 255, 0.04)
   );
 
-  border: 1px solid rgba(140, 82, 255, 0.18);
+  border: 1px solid var(--border);
 
   backdrop-filter: blur(18px);
 
@@ -637,7 +620,7 @@
 
   border-radius: 50%;
 
-  background: rgba(140, 82, 255, 0.12);
+  background: var(--primary-bg);
 
   filter: blur(90px);
 
@@ -655,11 +638,11 @@
 
   border-radius: 999px;
 
-  background: rgba(140, 82, 255, 0.1);
+  background: var(--primary-bg);
 
-  border: 1px solid rgba(140, 82, 255, 0.3);
+  border: 1px solid var(--primary-border);
 
-  color: #b892ff;
+  color: var(--primary-light);
 
   font-size: 0.82rem;
 
@@ -673,7 +656,7 @@
 }
 
 .closing-title {
-  color: #ffffff;
+  color: var(--text-primary);
 
   font-size: clamp(2rem, 4vw, 3rem);
 
@@ -691,7 +674,7 @@
 
   margin: auto;
 
-  color: #a8a8b5;
+  color: var(--text-secondary);
 
   font-size: 1.05rem;
 

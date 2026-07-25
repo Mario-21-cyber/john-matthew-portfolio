@@ -1,50 +1,65 @@
 import "./Navbar.css";
-import { FaMoon } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { FaMoon, FaSun } from "react-icons/fa";
+import { NavLink, useLocation } from "react-router-dom";
+
+import { useTheme } from "../../context/ThemeContext";
+
 function Navbar() {
+  const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
+  const handleNavigationClick = (e, path) => {
+    if (location.pathname === path) {
+      e.preventDefault();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <header className="navbar">
-
       <div className="logo">
         &lt;<span>/</span>&gt;
       </div>
 
       <nav className="nav-links">
+        <NavLink
+          to="/"
+          onClick={(e) => handleNavigationClick(e, "/")}
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Home
+        </NavLink>
 
-  <NavLink
-    to="/"
-    className={({ isActive }) => isActive ? "active" : ""}
-  >
-    Home
-  </NavLink>
+        <NavLink
+          to="/experience"
+          onClick={(e) => handleNavigationClick(e, "/experience")}
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Experience
+        </NavLink>
 
-  <NavLink
-    to="/experience"
-    className={({ isActive }) => isActive ? "active" : ""}
-  >
-    Experience
-  </NavLink>
+        <NavLink
+          to="/projects"
+          onClick={(e) => handleNavigationClick(e, "/projects")}
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Projects
+        </NavLink>
 
-  <NavLink
-    to="/projects"
-    className={({ isActive }) => isActive ? "active" : ""}
-  >
-    Projects
-  </NavLink>
+        <NavLink
+          to="/about"
+          onClick={(e) => handleNavigationClick(e, "/about")}
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          About
+        </NavLink>
 
-  <NavLink
-    to="/about"
-    className={({ isActive }) => isActive ? "active" : ""}
-  >
-    About
-  </NavLink>
-
-  <button className="theme-btn">
-    <FaMoon />
-  </button>
-
-</nav>
-
+        <button className="theme-btn" onClick={toggleTheme}>
+          {theme === "dark" ? <FaSun /> : <FaMoon />}
+        </button>
+      </nav>
     </header>
   );
 }

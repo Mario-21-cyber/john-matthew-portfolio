@@ -73,7 +73,7 @@
 
   font-weight: 500;
 
-  color: #9ca3af;
+  color: var(--text-secondary);
 
   margin-bottom: 12px;
 
@@ -81,7 +81,7 @@
 }
 
 .hero-greeting span {
-  color: #8b5cf6;
+  color: var(--primary);
 
   font-weight: 700;
 
@@ -101,7 +101,7 @@
 }
 
 .hero-first-name {
-  color: #ffffff;
+  color: var(--text-primary);
 
   font-size: 64px;
 
@@ -121,7 +121,12 @@
 
   letter-spacing: -2px;
 
-  background: linear-gradient(90deg, #a855f7, #7c5cff, #5b7cff);
+  background: linear-gradient(
+    90deg,
+    var(--primary-light),
+    var(--primary),
+    #5b7cff
+  );
 
   -webkit-background-clip: text;
 
@@ -145,11 +150,11 @@
 
   border-radius: 999px;
 
-  background: rgba(139, 92, 246, 0.1);
+  background: var(--primary-bg);
 
-  border: 1px solid rgba(139, 92, 246, 0.25);
+  border: 1px solid var(--primary-border);
 
-  color: #d8ccff;
+  color: var(--primary-light);
 
   font-size: 11px;
 
@@ -169,7 +174,7 @@
 .hero-description {
   max-width: 480px;
 
-  color: #a3aab8;
+  color: var(--text-secondary);
 
   font-size: 15px;
 
@@ -211,9 +216,9 @@
 
   background: linear-gradient(
     to right,
-    #090909 0%,
-    rgba(9, 9, 9, 0.95) 20%,
-    rgba(9, 9, 9, 0) 100%
+    var(--bg-primary) 0%,
+    color-mix(in srgb, var(--bg-primary) 95%, transparent) 20%,
+    transparent 100%
   );
 }
 .hero-tech-wrapper::after {
@@ -221,9 +226,9 @@
 
   background: linear-gradient(
     to left,
-    #090909 0%,
-    rgba(9, 9, 9, 0.95) 20%,
-    rgba(9, 9, 9, 0) 100%
+    var(--bg-primary) 0%,
+    color-mix(in srgb, var(--bg-primary) 95%, transparent) 20%,
+    transparent 100%
   );
 }
 .hero-tech-marquee {
@@ -249,17 +254,17 @@
 
   white-space: nowrap;
 
-  color: #9ca3af;
+  color: var(--text-secondary);
 }
 
 .hero-tech:hover {
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .hero-tech-icon {
   font-size: 20px;
 
-  color: #7c5cff;
+  color: var(--primary);
 }
 
 .hero-tech:hover {
@@ -267,7 +272,7 @@
 }
 
 .hero-tech:hover .hero-tech-icon {
-  color: #8b5cf6;
+  color: var(--primary-light);
 }
 
 .hero-tech-text {
@@ -276,7 +281,7 @@
   font-weight: 500;
 }
 .hero-tech-text {
-  color: #ffffff;
+  color: var(--text-primary);
 
   font-size: 13px;
 
@@ -336,29 +341,29 @@
 .primary-btn {
   color: #ffffff;
 
-  background: linear-gradient(90deg, #8b5cf6, #6d5ef8);
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
 
-  box-shadow: 0 12px 28px rgba(139, 92, 246, 0.28);
+  box-shadow: 0 12px 28px var(--primary-bg);
 }
 
 .primary-btn:hover {
   transform: translateY(-4px);
 
-  box-shadow: 0 18px 35px rgba(139, 92, 246, 0.38);
+  box-shadow: 0 18px 35px var(--primary-bg);
 }
 
 .secondary-btn {
-  color: #ffffff;
+  color: var(--text-primary);
 
   background: transparent;
 
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
 }
 
 .secondary-btn:hover {
-  background: #161922;
+  background: var(--bg-card);
 
-  border-color: #8b5cf6;
+  border-color: var(--primary);
 
   transform: translateY(-4px);
 }
@@ -392,11 +397,11 @@
 
   border-radius: 50%;
 
-  background: #161922;
+  background: var(--bg-card);
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
 
-  color: #d7dbe4;
+  color: var(--text-secondary);
 
   font-size: 17px;
 
@@ -406,9 +411,9 @@
 }
 
 .hero-social:hover {
-  background: #8b5cf6;
+  background: var(--primary);
 
-  border-color: #8b5cf6;
+  border-color: var(--primary);
 
   color: #ffffff;
 
@@ -476,10 +481,8 @@
 
   background: radial-gradient(
     circle,
-    rgba(139, 92, 246, 0.45) 0%,
-
-    rgba(139, 92, 246, 0.2) 45%,
-
+    color-mix(in srgb, var(--primary) 45%, transparent) 0%,
+    color-mix(in srgb, var(--primary) 20%, transparent) 45%,
     transparent 75%
   );
 
@@ -520,7 +523,7 @@
 
   border-radius: 50%;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
 
   top: 50%;
 
@@ -555,7 +558,7 @@
 
   border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--border);
 }
 
 /* ==========================================================
@@ -565,8 +568,8 @@
 .hero-profile {
   position: absolute;
 
-  left: 50%;
-  top: 50%;
+  left: 49%;
+  top: 48%;
 
   transform: translate(-55%, -60%);
 
@@ -578,8 +581,7 @@
 
   pointer-events: none;
 
-  filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.45));
-
+  filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.25));
   -webkit-mask-image: linear-gradient(to bottom, #000 90%, transparent);
 
   mask-image: linear-gradient(to bottom, #000 72%, transparent);

@@ -2,160 +2,137 @@
    NAVBAR
 =========================== */
 
-.navbar{
+.navbar {
+  position: fixed;
 
-    position:fixed;
+  top: 0;
 
-    top:0;
+  left: 0;
 
-    left:0;
+  width: 100%;
 
-    width:100%;
+  height: 90px;
 
-    height:90px;
+  display: flex;
 
-    display:flex;
+  justify-content: space-between;
 
-    justify-content:space-between;
+  align-items: center;
 
-    align-items:center;
+  padding: 0 70px;
 
-    padding:0 70px;
+  background: var(--bg-primary);
 
-    background:#050505;
-
-    z-index:1000;
-
+  z-index: 1000;
 }
 
 /* ===========================
    LOGO
 =========================== */
 
-.logo{
+.logo {
+  font-size: 34px;
 
-    font-size:34px;
+  font-weight: 900;
 
-    font-weight:900;
+  color: var(--text-primary);
 
-    color:white;
+  cursor: pointer;
 
-    cursor:pointer;
-
-    user-select:none;
-
+  user-select: none;
 }
 
-.logo span{
+.logo span {
+  background: linear-gradient(90deg, #7c5cff, #3b82f6);
 
-    background:linear-gradient(90deg,#7C5CFF,#3B82F6);
+  -webkit-background-clip: text;
 
-    -webkit-background-clip:text;
+  background-clip: text;
 
-    background-clip:text;
-
-    -webkit-text-fill-color:transparent;
-
+  -webkit-text-fill-color: transparent;
 }
 
 /* ===========================
    NAV LINKS
 =========================== */
 
-.nav-links{
+.nav-links {
+  display: flex;
 
-    display:flex;
+  align-items: center;
 
-    align-items:center;
-
-    gap:40px;
-
+  gap: 40px;
 }
 
-.nav-links a{
+.nav-links a {
+  position: relative;
 
-    position:relative;
+  color: var(--text-secondary);
 
-    color:#8d8d8d;
+  font-size: 17px;
 
-    font-size:17px;
+  font-weight: 600;
 
-    font-weight:600;
-
-    transition:.3s;
-
+  transition: 0.3s;
 }
 
 /* Hover */
 
-.nav-links a:hover{
-
-    color:white;
-
+.nav-links a:hover {
+  color: var(--text-primary);
 }
 
 /* Active Link */
 
-.nav-links a.active{
-
-    color:white;
-
+.nav-links a.active {
+  color: var(--text-primary);
 }
 
 /* Underline */
 
-.nav-links a::after{
+.nav-links a::after {
+  content: "";
 
-    content:"";
+  position: absolute;
 
-    position:absolute;
+  left: 0;
 
-    left:0;
+  bottom: -10px;
 
-    bottom:-10px;
+  width: 0;
 
-    width:0;
+  height: 2px;
 
-    height:2px;
+  background: var(--primary);
 
-    background:#4F46E5;
-
-    transition:.35s;
-
+  transition: 0.35s;
 }
 
 .nav-links a:hover::after,
-
-.nav-links a.active::after{
-
-    width:100%;
-
+.nav-links a.active::after {
+  width: 100%;
 }
 
 /* ===========================
    DARK MODE BUTTON
 =========================== */
 
-.theme-btn{
+.theme-btn {
+  background: none;
 
-    background:none;
+  border: none;
 
-    border:none;
+  color: var(--text-secondary);
 
-    color:#8d8d8d;
+  font-size: 20px;
 
-    font-size:20px;
+  cursor: pointer;
 
-    cursor:pointer;
-
-    transition:.3s;
-
+  transition: 0.3s;
 }
 
-.theme-btn:hover{
+.theme-btn:hover {
+  color: white;
 
-    color:white;
-
-    transform:rotate(30deg);
-
+  transform: rotate(30deg);
 }

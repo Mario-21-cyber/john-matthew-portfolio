@@ -1,5 +1,7 @@
 import "./Footer.css";
 
+import { Link, useLocation } from "react-router-dom";
+
 import { motion } from "framer-motion";
 
 import {
@@ -13,22 +15,22 @@ import {
 const navigationLinks = [
   {
     title: "Home",
-    href: "#home",
+    href: "/",
   },
 
   {
     title: "Experience",
-    href: "experience",
+    href: "/experience",
   },
 
   {
     title: "Projects",
-    href: "projects",
+    href: "/projects",
   },
 
   {
     title: "About",
-    href: "about",
+    href: "/about",
   },
 ];
 
@@ -75,6 +77,17 @@ const socialLinks = [
 ];
 
 function Footer() {
+  const location = useLocation();
+  const handleNavigationClick = (e, href) => {
+    if (location.pathname === href) {
+      e.preventDefault();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <footer id="footer" className="footer">
       <div className="footer-container">
@@ -122,7 +135,12 @@ function Footer() {
             <ul>
               {navigationLinks.map((link) => (
                 <li key={link.title}>
-                  <a href={link.href}>{link.title}</a>
+                  <Link
+                    to={link.href}
+                    onClick={(e) => handleNavigationClick(e, link.href)}
+                  >
+                    {link.title}
+                  </Link>
                 </li>
               ))}
             </ul>
